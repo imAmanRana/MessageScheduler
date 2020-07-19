@@ -6,6 +6,8 @@ package com.iqvia.homeassignment.messagescheduler.model;
 import java.time.LocalDateTime;
 
 /**
+ * Model Class for input request
+ * 
  * @author Amandeep Singh
  * @see <a href="https://www.linkedin.com/in/imamanrana/" target=
  *      "_blank">LinkedIn Profile</a>

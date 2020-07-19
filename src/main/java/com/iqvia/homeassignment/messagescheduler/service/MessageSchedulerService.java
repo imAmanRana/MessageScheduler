@@ -9,11 +9,20 @@ import com.iqvia.homeassignment.messagescheduler.model.MessageRequest;
 import com.iqvia.homeassignment.messagescheduler.model.MessageResponse;
 
 /**
+ * Service class interface
+ * 
  * @author Amandeep Singh
- * @see <a href="https://www.linkedin.com/in/imamanrana/" target="_blank">LinkedIn Profile</a>
+ * @see <a href="https://www.linkedin.com/in/imamanrana/" target=
+ *      "_blank">LinkedIn Profile</a>
  */
 public interface MessageSchedulerService {
 
-	
-	MessageResponse scheduleMessage(MessageRequest messageRequest) throws SchedulerException;
+	/**
+	 * Message Scheduler
+	 * 
+	 * @param messageRequest
+	 * @return {@link MessageResponse}
+	 * @throws SchedulerException
+	 */
+	MessageResponse scheduleMessage(final MessageRequest messageRequest) throws SchedulerException;
 }
