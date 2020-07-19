@@ -2,9 +2,9 @@
 RESTful Web Service that schedules messages to be printed at specific time
 
 ### Requirements
-* Min. JDK 1.8 version
+* Min. JDK 1.8 version (i used jdk12.0.2)
 * MySQL Database
-* Gradle
+* Gradle ( i used 6.4.1)
 * Java IDE (Eclipse, Intellij...)
 
 ### Configuring Application
@@ -23,7 +23,7 @@ RESTful Web Service that schedules messages to be printed at specific time
         - Specify the mysql host url (eg: localhost:3306)
         - Database Name created earlier (eg: iqvia_messageScheduler)
     2. *spring.datasource.username*
-        - User to this databaseiqvia_messageScheduler (eg: iqvia)
+        - User to this above database(iqvia_messageScheduler) (eg: iqvia)
     3. *spring.datasource.password*
         - User Password (IqVia@542)
 5. All set, run the file **MessageSchedulerApplication.java** as java application
@@ -38,3 +38,9 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8080/schedu
 "deliveryTime" : "2020-07-19T17:32:16"
 }'
 ```
+
+Json data passed in request should have these 2 fields:
+1. **content** - the message to be printed on console
+2. **deliveryTime** - the time at which this message to be printed, in *ISO-8601* format ,such as 2007-12-03T10:15:30 
+
+Empty message or past delivery time message is not accepted.

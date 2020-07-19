@@ -50,7 +50,7 @@ public class MessageSchedulerServiceImpl implements MessageSchedulerService {
 		}
 
 		return new MessageResponse(true,
-				String.format("%s scheduled for %t", messageRequest.getContent(), scheduledTime));
+				String.format("%s scheduled for %s", messageRequest.getContent(), scheduledTime.toString()));
 	}
 
 	/**

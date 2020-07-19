@@ -38,8 +38,19 @@ public class MessageSchedulerExceptionHandler {
 	 * @param exception
 	 * @return 400 - BAD REQUEST
 	 */
-	@ExceptionHandler(value = RuntimeException.class)
-	public ResponseEntity<Object> exception(RuntimeException exception) {
+	@ExceptionHandler(value = EmptyMessageException.class)
+	public ResponseEntity<Object> exception(EmptyMessageException exception) {
+		return new ResponseEntity<>(exception.getLocalizedMessage(), HttpStatus.BAD_REQUEST);
+	}
+
+	/**
+	 * Handles any runtime exception in the application
+	 * 
+	 * @param exception
+	 * @return 400 - BAD REQUEST
+	 */
+	@ExceptionHandler(value = PastDeliveryDateMessage.class)
+	public ResponseEntity<Object> exception(PastDeliveryDateMessage exception) {
 		return new ResponseEntity<>(exception.getLocalizedMessage(), HttpStatus.BAD_REQUEST);
 	}
 
